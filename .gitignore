@@ -310,3 +310,8 @@ TSWLatexianTemp*
 
 # python compiled files
 *.pyc
+
+l3build
+build/
+*.qns.pdf
+*.sol.pdf

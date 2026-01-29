@@ -14,7 +14,8 @@
 %<*questions>
 \documentclass[
 %<solutions>,answers
-]{exam}
+,nyufonts
+]{nyuquiz}
 \ProvidesFile
 %<*dtx>
 {q01.dtx}
@@ -26,142 +27,11 @@
   [2026/01/28 v0.0 MATH-UA 122.011 Calculus II, Spring 2026, Quiz 1]
 \title{Quiz 1}
 \author{MATH-UA 122.011 Calculus II}
-\date{January 28, 2026}
-
-
-\usepackage{iftex}
-\iftutex
-  \usepackage{fontspec}
-  \setmainfont{Frank Ruhl Libre}[
-    ItalicFont=*,
-    ItalicFeatures={FakeSlant}
-  ]
-  \setsansfont{NYU Perstare}[
-    FontFace={l}{n}{* Light},
-    FontFace={l}{it}{* Light Italic},
-    FontFace={sb}{n}{* Medium},
-    FontFace={sb}{it}{* Medium Italic},
-    FontFace={b}{n}{* Bold},
-    FontFace={b}{it}{* Bold Italic},
-    UprightFont=* Regular,
-    BoldFont=* Medium,
-    ItalicFont=* Italic,
-    BoldItalicFont=* Medium Italic,
-    SmallCapsFont=Montserrat-Medium.otf, SmallCapsFeatures={Letters=SmallCaps},
-    BoldFeatures={SmallCapsFont=Montserrat-Bold.otf}
-  ]
-\else
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{charter}
-  \usepackage{montserrat}
-\fi
-
-
-\usepackage{titling}
-\usepackage{changepage}%      For the `adjustwidth' environment
-\usepackage{markversion}
-
-\usepackage{xcolor-nyu22}[2022/08/05]
-% In the contemporary/subtle tone quadrant, we use sans for the main text and
-% serif for the section titles.
-%
-% These font assignments have nothing to do with this package; they are part of
-% the styling of a document
-\usepackage{titlesec}
-\newcommand{\headingfont}{\sffamily\color{NyuViolet}}
-\titleformat*{\section}{\LARGE\headingfont}
-\titleformat*{\subsection}{\Large\headingfont}
-\titleformat*{\subsubsection}{\large\headingfont}
-\renewcommand{\maketitlehooka}{\headingfont}
-
-\usepackage{eso-pic}
-\usepackage{graphicx}
-\usepackage{etoolbox}
-\newsavebox{\logobox}
-\savebox{\logobox}{\includegraphics[]{nyu_short_black}}
-\makeatletter
-\renewcommand{\maketitle}{
-    \noindent\parbox{\textwidth}{%
-    \sffamily\color{UltraViolet}%
-    \Large\@author
-    \hfill\@title
-    \hfill\@date}
-    {\color{UltraViolet}\hrule\bigskip}
-    \AddToShipoutPictureBG*{%
-    \AtPageUpperLeft{%
-      \raisebox{-1.5\ht\logobox}{\hspace{0.5\ht\logobox}\usebox{\logobox}}
-      }%
-    }
-}
-
-\newcommand{\student@name}{}
-\newcommand{\student@id}{}
-\newcommand{\studentnamestyle}{\sffamily\Large\color{DeepViolet}}
-\newcommand{\studentidstyle}{\sffamily\Large\color{DeepViolet}}
-\NewDocumentCommand{\setstudentname}{m}{\gdef\student@name{#1}}
-\NewDocumentCommand{\setstudentid}{m}{\gdef\student@id{#1}}
-\newcommand{\insertstudentname}{\studentnamestyle\student@name}
-\newcommand{\insertstudentid}{\studentidstyle\student@id}
-\newcommand{\insertcodefield}{\relax}
-
-\newcommand{\insertidfields}{
-{\setlength{\parindent}{0pt}%
-  \begin{minipage}[b]{8cm}
-      \hfill\fbox{
-      \begin{minipage}[b][1.1cm+3ex][t]{0.95\textwidth}
-          Full Name:\vfill
-          \insertstudentname
-      \end{minipage}
-  }\hfill\vspace{5ex}
-  \end{minipage}
-  \begin{minipage}[b]{8cm}
-      \hfill\fbox{
-      \begin{minipage}[b][1.1cm+3ex][t]{0.95\textwidth}
-          NetID:\vfill
-          \insertstudentid
-      \end{minipage}
-  }\hfill\vspace{5ex}
-  \end{minipage}
-  \hspace*{\fill}
-\bigskip
-}}
-\newenvironment{instructions}{\noindent\itshape}{}
-\makeatother
-%% large print option
-\newif\iflargeprint\largeprintfalse
-\AtEndPreamble{
-  \iflargeprint
-    \usepackage[fontsize=16pt]{scrextend}
-  \fi
-}
-\AtBeginDocument{
-  \iflargeprint
-    \pgfplotsset{execute at begin axis={
-        \pgfplotsset{normalsize}
-    }}
-    % \AMCboxStyle{shape=oval,down=1mm,size=2.5ex}
-    % \AMCopenOpts{lines=12,framerule=0pt}    
-    % \AddToHook{cmd/insertcodefield/before}{\bgroup\AMCboxStyle{size=2.0ex}}
-    % \AddToHook{cmd/insertcodefield/after}{\egroup\AddToHook{env/question/end}[largeprint]{\clearpage}}
-  \fi
-}
-%% end large print option
-
-\AtEndPreamble{
-  \ifprintanswers
-    \AddToHook{cmd/studentnamestyle/after}{\Huge\color{Magenta}}
-    \setstudentname{Solutions}
-  \fi
-}
-
-%% end document style
-
+\date{January 30, 2026}
 
 
 
 \usepackage{tikz}
-\usetikzlibrary{MATH-UA-123-fall22}
 
 % Random seed(s) generated Wed Jan 28 10:54:39 2026
 %<A>\def\randomseed{3761534}
@@ -261,6 +131,7 @@ If you wish to change your selection, erase your marks completely.
           &= \frac{126}{9} = 14.
       \end{align*}
     \end{solution}
+    \answerline[\(14\)]
 \end{question}
 \end{questions}
     
